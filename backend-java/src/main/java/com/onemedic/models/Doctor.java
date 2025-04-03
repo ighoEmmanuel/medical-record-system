@@ -4,13 +4,15 @@ import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "doctors")
+import java.util.List;
+
 
 @Data
+@Document(collection = "doctors")
 public class Doctor extends User {
 
     @Id
-    private String id;
-    private Specialization specialization;
-    private Appointment appointment;
+    private String            id;
+    private Specialization    specialization;
+    private List<Appointment> appointment;
 }

@@ -3,15 +3,16 @@ package com.onemedic.services.impl;
 
 import com.onemedic.models.Patient;
 import com.onemedic.repositories.PatientRepository;
+import com.onemedic.services.PatientService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 @Service
-public class PatientService {
+public class PatientServiceImpl implements PatientService {
     private final PatientRepository patientRepository;
 
-    public PatientService(PatientRepository patientRepository) {
+    public PatientServiceImpl(PatientRepository patientRepository) {
         this.patientRepository = patientRepository;
     }
 
@@ -23,10 +24,8 @@ public class PatientService {
         return patientRepository.findAll(pageable);
     }
 
-    public Patient getPatientById(String id) {
+    public Patient getPatient(String id) {
         return patientRepository.findById(id).orElse(null);
     }
-
-
 
 }
