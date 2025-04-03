@@ -1,4 +1,7 @@
 package com.onemedic.repositories;
 
-public interface DoctorRepository {
+import com.onemedic.models.Doctor;
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+public interface DoctorRepository extends MongoRepository<Doctor, String> {
 }
