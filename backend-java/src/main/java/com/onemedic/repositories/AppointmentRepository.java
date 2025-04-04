@@ -1,4 +1,7 @@
 package com.onemedic.repositories;
 
-public interface AppointmentRepository {
+import com.onemedic.models.Appointment;
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+public interface AppointmentRepository extends MongoRepository<Appointment, String> {
 }
